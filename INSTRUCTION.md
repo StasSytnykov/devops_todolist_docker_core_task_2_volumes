@@ -3,14 +3,14 @@
 Firstly, you need to build and run sql database using this commands
 
 ```commandline
-docker build . -f Dockerfile.mysql -t my-sql:1.0.0
-docker run  -d -p 3306:3306 --name my-mysql -v my-mysql-data:/var/lib/mysql my-sql:1.0.0
+docker build . -f Dockerfile.mysql -t mysql-local:1.0.0
+docker run  -d -p 3306:3306 --name mysql-local -v my-mysql-data:/var/lib/mysql mysql-local:1.0.0
 ```
 
 The next step, you need to build and run the app container
 
 ```commandline
-docker build . -t todoapp:1.0.0
+docker build . -t todoapp:2.0.0
 docker run -d -p 8080:8080 --name todoapp todoapp:2.0.0
 ```
 

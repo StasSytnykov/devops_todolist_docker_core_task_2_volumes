@@ -7,6 +7,12 @@ docker build . -f Dockerfile.mysql -t mysql-local:1.0.0
 docker run  -d -p 3306:3306 --name mysql-local -v my-mysql-data:/var/lib/mysql mysql-local:1.0.0
 ```
 
+After this you need to inspect the bridge and find the IP of mysql-local container
+use this command 
+```commandline
+docker network inspect bridge
+```
+When you find the IP you need to change 'HOST' property in DATABASES variable to this IP
 The next step, you need to build and run the app container
 
 ```commandline
